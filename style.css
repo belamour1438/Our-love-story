@@ -1,0 +1,198 @@
+/* Import cute, playful fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500;700&display=swap');
+
+/* Color Variables */
+:root {
+    --primary-color: #ff69b4; /* Pink - Hot Pink (Main Accent) */
+    --secondary-color: #ffe4e1; /* Pale Pink - Misty Rose (Light BG) */
+    --ribbon-color: #f08080; /* Light Coral */
+    --text-color: #333;
+    --bg-color: #f7f7f7;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    background-color: var(--secondary-color);
+    padding: 60px 20px 40px 20px; /* Reduced bottom padding */
+    border-radius: 0 0 50% 50%; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero-section h1 {
+    font-family: 'Pacifico', cursive; 
+    color: var(--primary-color);
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+/* --- PHOTO WRAPPER & POLAROID EFFECT --- */
+
+.photo-wrapper {
+    position: relative; 
+    display: inline-block; 
+    margin: 20px auto 0 auto;
+}
+
+.header-photo {
+    width: 80%; 
+    max-width: 450px;
+    height: 400px;
+    object-fit: cover;
+    margin-top: 0; /* Handled by wrapper */
+    
+    /* Polaroid Frame Styling */
+    background-color: white; 
+    border: 1px solid #ddd; 
+    padding: 15px 15px 50px 15px; /* Creates the thick bottom space */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transform: rotate(-2deg); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-photo:hover {
+    transform: rotate(0deg) scale(1.02); 
+    cursor: pointer;
+}
+
+/* --- RIBBON BANNER --- */
+
+.ribbon {
+    position: absolute;
+    top: 20px; 
+    right: -20px; 
+    
+    background-color: var(--ribbon-color); 
+    color: white;
+    padding: 5px 25px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    transform: rotate(15deg); 
+    z-index: 10;
+}
+
+/* --- GENERAL CONTENT & TEXT --- */
+.content-section {
+    padding: 40px 20px;
+    margin: 30px auto;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    border-bottom: 3px dashed var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+
+/* --- GALLERY (STICKER EFFECT) --- */
+.gallery-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.gallery-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    border-radius: 50%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Sticker/Pop-out Shadow Effect */
+    box-shadow: 0 0 0 10px var(--secondary-color); 
+}
+
+.gallery-image:hover {
+    transform: scale(1.08) rotate(3deg); 
+    /* Brighter shadow on hover */
+    box-shadow: 0 0 0 10px var(--primary-color), 
+                0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+/* --- MESSAGE BOX --- */
+.message-box {
+    position: relative;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.love-icon {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+/* Keyframe Animation for the heart */
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.beat-animation {
+    animation: heartBeat 1.5s infinite;
+    display: inline-block;
+}
+
+/* --- INTERACTIVE BUTTON --- */
+.cute-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px; 
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0px #c2185b; 
+    outline: none;
+}
+
+.cute-button:hover {
+    background-color: #ff85c1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #c2185b;
+}
+
+.cute-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #c2185b;
+}
+
+.hidden {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fffacd; 
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+/* --- FOOTER --- */
+.footer-section {
+    padding: 20px;
+    margin-top: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
